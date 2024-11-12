@@ -18,5 +18,8 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3"
+  },
+  "engines": {
+    "node": "18.20.4"
   }
 }
