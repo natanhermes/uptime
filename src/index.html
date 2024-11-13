@@ -181,7 +181,7 @@
 
     <div class="mt-4 container-players">
       <div class="ratio ratio-16x9 responsive-video align-self-center">
-        <video id="mainVideo" class="rounded-4" style="object-fit: cover;" poster="assets/thumb-uponline-method.PNG"
+        <video id="mainVideo" class="rounded-4" style="object-fit: cover;" poster="/assets/thumb-uponline-method.PNG"
           controls>
           <source
             src='https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-one%2Fuponline-method.mp4?alt=media&token=2eeeb2f5-a092-4f95-b9c5-a1465ffbdb82'
@@ -192,7 +192,7 @@
 
       <div class="container-secondary-videos">
         <div class="ratio ratio-16x9">
-          <video class="secondary-video rounded-4" style="object-fit: cover;" poster="assets/thumb-uptime-english.PNG">
+          <video class="secondary-video rounded-4" style="object-fit: cover;" poster="/assets/thumb-uptime-english.PNG">
             <source
               src='https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-one%2Fuptime-english.mp4?alt=media&token=b8d3124d-f48b-4487-8ae0-9c689a6d05af'
               type="video/mp4">
@@ -201,7 +201,7 @@
         </div>
 
         <div class="ratio ratio-16x9">
-          <video class="secondary-video rounded-4" style="object-fit: cover;" poster="assets/thumb-the-uptime.PNG">
+          <video class="secondary-video rounded-4" style="object-fit: cover;" poster="/assets/thumb-the-uptime.PNG">
             <source
               src='https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-one%2Fthe-uponline.mp4?alt=media&token=0fe12784-4cbd-4c88-bd57-40a52ea4a058'
               type="video/mp4">
@@ -222,7 +222,7 @@
   </section>
 
   <section class="section-cross-platform">
-    <img src="assets/mock-celular-notebook.png" alt="" class="">
+    <img src="/assets/mock-celular-notebook.png" alt="" class="">
 
     <div>
       <div class="container-span">
@@ -255,11 +255,11 @@
 
       </div>
     </div>
-    <img src="assets/uptime-headphone.png" alt="" class="">
+    <img src="/assets/uptime-headphone.png" alt="" class="">
   </section>
 
   <section class="section-kit-avr">
-    <img src="assets/mock-uptime-kitavr.png" alt="" class="">
+    <img src="/assets/mock-uptime-kitavr.png" alt="" class="">
 
     <div>
       <div class="container-span">
@@ -403,13 +403,13 @@
       </div>
 
       <div class="container-player">
-        <img src="assets/arrow-left-player.svg" id="prevBtn" />
+        <img src="/assets/arrow-left-player.svg" id="prevBtn" />
         <div class="ratio ratio-16x9">
           <video id="mainChapter" class="h-100 rounded-4" controls style="object-fit: fill;">
             Seu navegador não suporta a reprodução de vídeos.
           </video>
         </div>
-        <img src="assets/arrow-right-player.svg" id="nextBtn" />
+        <img src="/assets/arrow-right-player.svg" id="nextBtn" />
       </div>
 
       <div class="ratio ratio-16x9 right-video">
@@ -418,67 +418,6 @@
         </video>
       </div>
     </div>
-    <script>
-      const videoUrls = [
-        {
-          src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%201%20-.mp4?alt=media&token=f3605c53-ba08-4281-a9bc-15ab9b79caa9',
-          poster: 'assets/thumb-chapter-one.png'
-        },
-        {
-          src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%202-.mp4?alt=media&token=65cb6153-376c-400e-add4-f84571add5b0',
-          poster: 'assets/thumb-chapter-two.png'
-        },
-        {
-          src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%203%20-.mp4?alt=media&token=e3ee9c26-5f4e-4774-a6c7-46bf5145f0fa',
-          poster: 'assets/thumb-chapter-three.png'
-        },
-        {
-          src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%204%20-.mp4?alt=media&token=007ddf98-2779-448c-9f2b-df209ac6e208',
-          poster: 'assets/thumb-chapter-four.png'
-        },
-        {
-          src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%205%20.mp4?alt=media&token=89dcd5a9-de42-4a5f-b0d3-eef1b968abf1',
-          poster: 'assets/thumb-chapter-five.png'
-        },
-        {
-          src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%206%20-.mp4?alt=media&token=77e9f429-2c80-4193-af92-e288eb917645',
-          poster: 'assets/thumb-chapter-six.png'
-        },
-        {
-          src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%207%20-.mp4?alt=media&token=8752e83d-bc58-4cd1-a334-cd69319d7e64',
-          poster: 'assets/thumb-chapter-seven.png'
-        },
-      ];
-
-      let currentIndex = 0;
-
-      const mainChapter = document.getElementById('mainChapter');
-      const leftChapter = document.getElementById('leftChapter');
-      const rightChapter = document.getElementById('rightChapter');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-
-      function updateVideos() {
-        mainChapter.src = videoUrls[currentIndex].src;
-        mainChapter.poster = videoUrls[currentIndex].poster;
-        leftChapter.src = videoUrls[(currentIndex - 1 + videoUrls.length) % videoUrls.length].src;
-        leftChapter.poster = videoUrls[(currentIndex - 1 + videoUrls.length) % videoUrls.length].poster;
-        rightChapter.src = videoUrls[(currentIndex + 1) % videoUrls.length].src;
-        rightChapter.poster = videoUrls[(currentIndex + 1) % videoUrls.length].poster;
-      }
-
-      updateVideos();
-
-      nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % videoUrls.length;
-        updateVideos();
-      });
-
-      prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + videoUrls.length) % videoUrls.length;
-        updateVideos();
-      });
-    </script>
     <div class="container-footer mt-5">
       <h1>Sérgio Monteiro</h1>
       <span>Chairman UPTIME GROUP</span>

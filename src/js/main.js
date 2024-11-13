@@ -132,7 +132,6 @@ function renderFlexRows() {
 
 document.addEventListener('DOMContentLoaded', renderFlexRows);
 
-
 const mainVideo = document.getElementById('mainVideo');
 const secondaryVideos = document.querySelectorAll('.secondary-video');
 
@@ -152,4 +151,72 @@ secondaryVideos.forEach(video => {
 		mainVideo.load();
 		mainVideo.play();
 	});
+});
+
+import posterOne from '../assets/thumb-chapters-one.png';
+import posterTwo from '../assets/thumb-chapters-two.png';
+import posterThree from '../assets/thumb-chapters-three.png';
+import posterFour from '../assets/thumb-chapters-four.png';
+import posterFive from '../assets/thumb-chapters-five.png';
+import posterSix from '../assets/thumb-chapters-six.png';
+import posterSeven from '../assets/thumb-chapters-seven.png';
+
+const videoUrls = [
+	{
+		src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%201%20-.mp4?alt=media&token=f3605c53-ba08-4281-a9bc-15ab9b79caa9',
+		poster: posterOne
+	},
+	{
+		src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%202-.mp4?alt=media&token=65cb6153-376c-400e-add4-f84571add5b0',
+		poster: posterTwo
+	},
+	{
+		src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%203%20-.mp4?alt=media&token=e3ee9c26-5f4e-4774-a6c7-46bf5145f0fa',
+		poster: posterThree
+	},
+	{
+		src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%204%20-.mp4?alt=media&token=007ddf98-2779-448c-9f2b-df209ac6e208',
+		poster: posterFour
+	},
+	{
+		src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%205%20.mp4?alt=media&token=89dcd5a9-de42-4a5f-b0d3-eef1b968abf1',
+		poster: posterFive
+	},
+	{
+		src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%206%20-.mp4?alt=media&token=77e9f429-2c80-4193-af92-e288eb917645',
+		poster: posterSix
+	},
+	{
+		src: 'https://firebasestorage.googleapis.com/v0/b/uptime-videos.appspot.com/o/section-two%2Fepis%C3%B3dio%207%20-.mp4?alt=media&token=8752e83d-bc58-4cd1-a334-cd69319d7e64',
+		poster: posterSeven
+	},
+];
+
+let currentIndex = 0;
+
+const mainChapter = document.getElementById('mainChapter');
+const leftChapter = document.getElementById('leftChapter');
+const rightChapter = document.getElementById('rightChapter');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+function updateVideos() {
+	mainChapter.src = videoUrls[currentIndex].src;
+	mainChapter.poster = videoUrls[currentIndex].poster;
+	leftChapter.src = videoUrls[(currentIndex - 1 + videoUrls.length) % videoUrls.length].src;
+	leftChapter.poster = videoUrls[(currentIndex - 1 + videoUrls.length) % videoUrls.length].poster;
+	rightChapter.src = videoUrls[(currentIndex + 1) % videoUrls.length].src;
+	rightChapter.poster = videoUrls[(currentIndex + 1) % videoUrls.length].poster;
+}
+
+updateVideos();
+
+nextBtn.addEventListener('click', () => {
+	currentIndex = (currentIndex + 1) % videoUrls.length;
+	updateVideos();
+});
+
+prevBtn.addEventListener('click', () => {
+	currentIndex = (currentIndex - 1 + videoUrls.length) % videoUrls.length;
+	updateVideos();
 });
